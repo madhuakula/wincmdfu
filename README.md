@@ -7,87 +7,88 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 
 ## Table of Contents
 
-- [Get entires from IPv4 neighbor cache](#Get-entires-from-IPv4-neighbor-cache)
-- [Get available wireless networks via cmd and netsh](#Get-available-wireless-networks-via-cmd-and-netsh)
-- [Quick list IP addresses only](#Quick-list-IP-addresses-only)
-- [List ALL services AND their binaries](#List-ALL-services-AND-their-binaries)
-- [Export SAM from the Windows Registry to a file](#Export-SAM-from-the-Windows-Registry-to-a-file)
-- [Enable remote desktop using reg](#Enable-remote-desktop-using-reg)
-- [Enable the boot log to see list of drivers loaded during startup](#Enable-the-boot-log-to-see-list-of-drivers-loaded-during-startup)
-- [Powershell cmdlet to create System Restore Point](#Powershell-cmdlet-to-create-System-Restore-Point)
-- [Check the current account for seDebugPrivilege](#Check-the-current-account-for-seDebugPrivilege)
-- [Enable/disable system users via command line](#Enable/disable-system-users-via-command-line)
-- [View process that is consuming the most memory using powershell](#View-process-that-is-consuming-the-most-memory-using-powershell)
-- [Create an Alternate Data Stream from a file on an NTFS partition](#Create-an-Alternate-Data-Stream-from-a-file-on-an-NTFS-partition)
-- [Export running processes in CSV format](#Export-running-processes-in-CSV-format)
-- [Lock Windows desktop using command line](#Lock-Windows-desktop-using-command-line)
-- [Start explorer with a file or folder selected/highlighted](#Start-explorer-with-a-file-or-folder-selected/highlighted)
-- [Dump VirtualBox image containing RAM and ELF headers](#Dump-VirtualBox-image-containing-RAM-and-ELF-headers)
-- [Set Time Zone of the system clock](#Set-Time-Zone-of-the-system-clock)
-- [Make folder inside a guest from the host](#Make-folder-inside-a-guest-from-the-host)
-- [Force copy meterpreter binary to remote machines & run as system](#Force-copy-meterpreter-binary-to-remote-machines-&-run-as-system)
-- [Create n/w share called `Apps`, with read access & limit to 10 conns](#Create-n/w-share-called-`Apps`,-with-read-access-&-limit-to-10-conns)
-- [List all the drives under My Computer using fsutil](#List-all-the-drives-under-My-Computer-using-fsutil)
-- [Troubleshoot n/w packet drops with router statistics using pathping](#Troubleshoot-n/w-packet-drops-with-router-statistics-using-pathping)
-- [List unsigned dlls for a specific process. For system wide list, remove the process name](#List-unsigned-dlls-for-a-specific-process.-For-system-wide-list,-remove-the-process-name)
-- [Obtain a list of Windows XP computers on the domain using PS](#Obtain-a-list-of-Windows-XP-computers-on-the-domain-using-PS)
-- [Open the System Properties window, with the `Advanced` tab selected](#Open-the-System-Properties-window,-with-the-`Advanced`-tab-selected)
-- [Using the `dir` command to find Alternate Data Streams](#Using-the-`dir`-command-to-find-Alternate-Data-Streams)
-- [Use `procdump` to obtain the `lsass` process memory. Use `mimikatz` `minidump` to get passwords](#Use-`procdump`-to-obtain-the-`lsass`-process-memory.-Use-`mimikatz`-`minidump`-to-get-passwords)
-- [Run `mimikatz` in `minidump` mode & use `mini.dmp` from `procdump`](#Run-`mimikatz`-in-`minidump`-mode-&-use-`mini.dmp`-from-`procdump`)
-- [Get list of startup programs using wmic](#Get-list-of-startup-programs-using-wmic)
-- [Add a binary to an Alternate Data Stream](#Add-a-binary-to-an-Alternate-Data-Stream)
-- [Execute a binary Alternate Data Stream Win 7/2008 using wmic](#Execute-a-binary-Alternate-Data-Stream-Win-7/2008-using-wmic)
-- [Show config & state info for Network Access Protection enabled client](#Show-config-&-state-info-for-Network-Access-Protection-enabled-client)
-- [Get computer system information, including domain name and memory, using wmic](#Get-computer-system-information,-including-domain-name-and-memory,-using-wmic)
-- [Use the Package Manager in Windows to install the Telnet client on Windows Vista & higher](#Use-the-Package-Manager-in-Windows-to-install-the-Telnet-client-on-Windows-Vista-&-higher)
-- [Secure delete a file/folder in Windows](#Secure-delete-a-file/folder-in-Windows)
-- [Show all startup entries while hiding Microsoft entries. CSV output](#Show-all-startup-entries-while-hiding-Microsoft-entries.-CSV-output)
-- [Download files via commandline using PS](#Download-files-via-commandline-using-PS)
-- [Fetch the last 10 entries from the Windows Security event log, in text format](#Fetch-the-last-10-entries-from-the-Windows-Security-event-log,-in-text-format)
-- [Create a dll that runs calc on invoke](#Create-a-dll-that-runs-calc-on-invoke)
-- [Run a command as another user](#Run-a-command-as-another-user)
-- [Get shutdown/reboot events from the last 1000 log entries using PS](#Get-shutdown/reboot-events-from-the-last-1000-log-entries-using-PS)
-- [Create a new snapshot of the volume that has the AD database and log files](#Create-a-new-snapshot-of-the-volume-that-has-the-AD-database-and-log-files)
-- [Mount the snapshot](#Mount-the-snapshot)
-- [Run a process on a remote system using wmic](#Run-a-process-on-a-remote-system-using-wmic)
-- [List the machines, with usernames, that were connected via RDP](#List-the-machines,-with-usernames,-that-were-connected-via-RDP)
-- [List all process that are running on your system by remote users connected via RDP](#List-all-process-that-are-running-on-your-system-by-remote-users-connected-via-RDP)
-- [Reset the Windows TCP\IP stack](#Reset-the-Windows-TCP\IP-stack)
-- [List logged on users. Very useful during a pentest to look for domain admins](#List-logged-on-users.-Very-useful-during-a-pentest-to-look-for-domain-admins)
-- [Set a static IP on a remote box](#Set-a-static-IP-on-a-remote-box)
-- [Bypass powershell execution policy restrictions](#Bypass-powershell-execution-policy-restrictions)
-- [List running processes every second on a remote box](#List-running-processes-every-second-on-a-remote-box)
-- [Get a list of running processes and their command line arguments on a remote system](#Get-a-list-of-running-processes-and-their-command-line-arguments-on-a-remote-system)
-- [Remotely enable and start the Volume Shadow Copy Service](#Remotely-enable-and-start-the-Volume-Shadow-Copy-Service)
-- [Ping multiple IPs from `ips.txt` & see live hosts](#Ping-multiple-IPs-from-`ips.txt`-&-see-live-hosts)
-- [Set global proxy in Windows to point to IE proxy](#Set-global-proxy-in-Windows-to-point-to-IE-proxy)
-- [Enumerate list of drivers with complete path information](#Enumerate-list-of-drivers-with-complete-path-information)
-- [View Group Policy Objects that have been applied to a system](#View-Group-Policy-Objects-that-have-been-applied-to-a-system)
-- [Reset the WMI repository to what it was when the OS was installed](#Reset-the-WMI-repository-to-what-it-was-when-the-OS-was-installed)
-- [Create symbolic links in Windows Vista, 7 & higher](#Create-symbolic-links-in-Windows-Vista,-7-&-higher)
-- [Enable the tftp client in Vista & higher](#Enable-the-tftp-client-in-Vista-&-higher)
-- [Obtain list of firewall rules on a local system](#Obtain-list-of-firewall-rules-on-a-local-system)
-- [Get name of current domain controller](#Get-name-of-current-domain-controller)
-- [Look at content cached in kernel mode on IIS 7 and higher](#Look-at-content-cached-in-kernel-mode-on-IIS-7-and-higher)
-- [Quick test to check `MS15_034`](#Quick-test-to-check-`MS15_034`)
-- [Get a list of all open Named pipes via Powershell](#Get-a-list-of-all-open-Named-pipes-via-Powershell)
-- [Possible `VENOM` detection on VirtualBox](#Possible-`VENOM`-detection-on-VirtualBox)
-- [List RDP sessions on local or remote in list format](#List-RDP-sessions-on-local-or-remote-in-list-format)
-- [Get a list of service packs & hotfixes using wmic for remote systems listed in file](#Get-a-list-of-service-packs-&-hotfixes-using-wmic-for-remote-systems-listed-in-file)
-- [Export wireless connection profiles](#Export-wireless-connection-profiles)
-- [Unzip using PowerShell](#Unzip-using-PowerShell)
-- [Open the Network & Sharing center](#Open-the-Network-&-Sharing-center)
-- [Remotely stop/start ftp on several systems](#Remotely-stop/start-ftp-on-several-systems)
-- [To quickly find large files using cmd](#To-quickly-find-large-files-using-cmd)
-- [Print RDP connects](#Print-RDP-connects)
-- [List scheduled tasks & binaries](#List-scheduled-tasks-&-binaries)
-- [Display the "Stored User names and Passwords" window](#Display-the-"Stored-User-names-and-Passwords"-window)
-- [List namespaces & classes in WMI via PowerShell](#List-namespaces-&-classes-in-WMI-via-PowerShell)
-- [Convert b/w VDI, VMDK, VHD, RAW disk images using VirtualBox](#Convert-b/w-VDI,-VMDK,-VHD,-RAW-disk-images-using-VirtualBox)
-- [Change file extensions recurseively](#Change-file-extensions-recurseively)
-- [List IPs of running VirtualBox machines](#List-IPs-of-running-VirtualBox-machines)
-- [Windows Privilege Escalation](#Windows-Privilege-Escalation)
+- [Get entires from IPv4 neighbor cache](#get-entires-from-ipv4-neighbor-cache)
+- [Get available wireless networks via cmd and netsh](#get-available-wireless-networks-via-cmd-and-netsh)
+- [Quick list IP addresses only](#quick-list-ip-addresses-only)
+- [List ALL services AND their binaries](#list-all-services-and-their-binaries)
+- [Export SAM from the Windows Registry to a file](#export-sam-from-the-windows-registry-to-a-file)
+- [Enable remote desktop using reg](#enable-remote-desktop-using-reg)
+- [Enable the boot log to see list of drivers loaded during startup](#enable-the-boot-log-to-see-list-of-drivers-loaded-during-startup)
+- [Powershell cmdlet to create System Restore Point](#powershell-cmdlet-to-create-system-restore-point)
+- [Check the current account for seDebugPrivilege](#check-the-current-account-for-sedebugprivilege)
+
+- [Enable/disable system users via command line](#enabledisable-system-users-via-command-line)
+- [View process that is consuming the most memory using powershell](#view-process-that-is-consuming-the-most-memory-using-powershell)
+- [Create an Alternate Data Stream from a file on an NTFS partition](#create-an-alternate-data-stream-from-a-file-on-an-ntfs-partition)
+- [Export running processes in CSV format](#export-running-processes-in-csv-format)
+- [Lock Windows desktop using command line](#lock-windows-desktop-using-command-line)
+- [Start explorer with a file or folder selected/highlighted](#start-explorer-with-a-file-or-folder-selectedhighlighted)
+- [Dump VirtualBox image containing RAM and ELF headers](#dump-virtualbox-image-containing-ram-and-elf-headers)
+- [Set Time Zone of the system clock](#set-time-zone-of-the-system-clock)
+- [Make folder inside a guest from the host](#make-folder-inside-a-guest-from-the-host)
+- [Force copy meterpreter binary to remote machines & run as system](#force-copy-meterpreter-binary-to-remote-machines--run-as-system)
+- [Create n/w share called `Apps`, with read access & limit to 10 conns](#create-nw-share-called-apps-with-read-access--limit-to-10-conns)
+- [List all the drives under My Computer using fsutil](#list-all-the-drives-under-my-computer-using-fsutil)
+- [Troubleshoot n/w packet drops with router statistics using pathping](#troubleshoot-nw-packet-drops-with-router-statistics-using-pathping)
+- [List unsigned dlls for a specific process. For system wide list](#list-unsigned-dlls-for-a-specific-process)
+- [Obtain a list of Windows XP computers on the domain using PS](#obtain-a-list-of-windows-xp-computers-on-the-domain-using-ps)
+- [Open the System Properties window, with the `Advanced` tab selected](#open-the-system-properties-window-with-the-advanced-tab-selected)
+- [Using the `dir` command to find Alternate Data Streams](#using-the-dir-command-to-find-alternate-data-streams)
+- [Use `procdump` to obtain the `lsass` process memory](#use-procdump-to-obtain-the-lsass-process-memory)
+- [Run `mimikatz` in `minidump` mode & use `mini.dmp` from `procdump`](#run-mimikatz-in-minidump-mode--use-minidmp-from-procdump)
+- [Get list of startup programs using wmic](#get-list-of-startup-programs-using-wmic)
+- [Add a binary to an Alternate Data Stream](#add-a-binary-to-an-alternate-data-stream)
+- [Execute a binary Alternate Data Stream Win 7/2008 using wmic](#execute-a-binary-alternate-data-stream-win-72008-using-wmic)
+- [Show config & state info for Network Access Protection enabled client](#show-config--state-info-for-network-access-protection-enabled-client)
+- [Get computer system information, including domain name and memory, using wmic](#get-computer-system-information-including-domain-name-and-memory-using-wmic)
+- [Use the Package Manager in Windows to install the Telnet client on Windows Vista & higher](#use-the-package-manager-in-windows-to-install-the-telnet-client-on-windows-vista--higher)
+- [Secure delete a file/folder in Windows](#secure-delete-a-filefolder-in-windows)
+- [Show all startup entries while hiding Microsoft entries. CSV output](#show-all-startup-entries-while-hiding-microsoft-entries-csv-output)
+- [Download files via commandline using PS](#download-files-via-commandline-using-ps)
+- [Fetch the last 10 entries from the Windows Security event log, in text format](#fetch-the-last-10-entries-from-the-windows-security-event-log-in-text-format)
+- [Create a dll that runs calc on invoke](#create-a-dll-that-runs-calc-on-invoke)
+- [Run a command as another user](#run-a-command-as-another-user)
+- [Get shutdown/reboot events from the last 1000 log entries using PS](#get-shutdownreboot-events-from-the-last-1000-log-entries-using-ps)
+- [Create a new snapshot of the volume that has the AD database and log files](#create-a-new-snapshot-of-the-volume-that-has-the-ad-database-and-log-files)
+- [Mount the snapshot](#mount-the-snapshot)
+- [Run a process on a remote system using wmic](#run-a-process-on-a-remote-system-using-wmic)
+- [List the machines, with usernames, that were connected via RDP](#list-the-machines-with-usernames-that-were-connected-via-rdp)
+- [List all process that are running on your system by remote users connected via RDP](#list-all-process-that-are-running-on-your-system-by-remote-users-connected-via-rdp)
+- [Reset the Windows TCP\IP stack](#reset-the-windows-tcpip-stack)
+- [List logged on users](#list-logged-on-users)
+- [Set a static IP on a remote box](#set-a-static-ip-on-a-remote-box)
+- [Bypass powershell execution policy restrictions](#bypass-powershell-execution-policy-restrictions)
+- [List running processes every second on a remote box](#list-running-processes-every-second-on-a-remote-box)
+- [Get a list of running processes and their command line arguments on a remote system](#get-a-list-of-running-processes-and-their-command-line-arguments-on-a-remote-system)
+- [Remotely enable and start the Volume Shadow Copy Service](#remotely-enable-and-start-the-volume-shadow-copy-service)
+- [Ping multiple IPs from `ips.txt` & see live hosts](#ping-multiple-ips-from-ipstxt--see-live-hosts)
+- [Set global proxy in Windows to point to IE proxy](#set-global-proxy-in-windows-to-point-to-ie-proxy)
+- [Enumerate list of drivers with complete path information](#enumerate-list-of-drivers-with-complete-path-information)
+- [View Group Policy Objects that have been applied to a system](#view-group-policy-objects-that-have-been-applied-to-a-system)
+- [Reset the WMI repository to what it was when the OS was installed](#reset-the-wmi-repository-to-what-it-was-when-the-os-was-installed)
+- [Create symbolic links in Windows Vista, 7 & higher](#create-symbolic-links-in-windows-vista-7--higher)
+- [Enable the tftp client in Vista & higher](#enable-the-tftp-client-in-vista--higher)
+- [Obtain list of firewall rules on a local system](#obtain-list-of-firewall-rules-on-a-local-system)
+- [Get name of current domain controller](#get-name-of-current-domain-controller)
+- [Look at content cached in kernel mode on IIS 7 and higher](#look-at-content-cached-in-kernel-mode-on-iis-7-and-higher)
+- [Quick test to check `MS15_034`](#quick-test-to-check-ms15_034)
+- [Get a list of all open Named pipes via Powershell](#get-a-list-of-all-open-named-pipes-via-powershell)
+- [Possible `VENOM` detection on VirtualBox](#possible-venom-detection-on-virtualbox)
+- [List RDP sessions on local or remote in list format](#list-rdp-sessions-on-local-or-remote-in-list-format)
+- [Get a list of service packs & hotfixes using wmic for remote systems listed in file](#get-a-list-of-service-packs--hotfixes-using-wmic-for-remote-systems-listed-in-file)
+- [Export wireless connection profiles](#export-wireless-connection-profiles)
+- [Unzip using PowerShell](#unzip-using-powershell)
+- [Open the Network & Sharing center](#open-the-network--sharing-center)
+- [Remotely stop/start ftp on several systems](#remotely-stopstart-ftp-on-several-systems)
+- [To quickly find large files using cmd](#to-quickly-find-large-files-using-cmd)
+- [Print RDP connections](#print-rdp-connections)
+- [List scheduled tasks & binaries](#list-scheduled-tasks--binaries)
+- [Display the "Stored User names and Passwords" window](#display-the-stored-user-names-and-passwords-window)
+- [List namespaces & classes in WMI via PowerShell](#list-namespaces--classes-in-wmi-via-powershell)
+- [Convert Between VDI, VMDK, VHD, RAW disk images using VirtualBox](#convert-between-vdi-vmdk-vhd-raw-disk-images-using-virtualbox)
+- [Change file extensions recurseively](#change-file-extensions-recurseively)
+- [List IPs of running VirtualBox machines](#list-ips-of-running-virtualbox-machines)
+- [Windows Privilege Escalation](#windows-privilege-escalation)
 
 ## Get entires from IPv4 neighbor cache
 
@@ -246,7 +247,9 @@ C:\> fsutil.exe fsinfo drives
 C:\> pathping -n http://www.google.com
 ```
 
-## List unsigned dlls for a specific process. For system wide list, remove the process name
+## List unsigned dlls for a specific process. 
+
+**For system wide list, remove the process name**
 
 ```
 C:\> listdlls -u explorer.exe
@@ -279,7 +282,9 @@ Using streams `sysinternals` (shows path):
 C:\> streams -s .
 ```
 
-## Use `procdump` to obtain the `lsass` process memory. Use `mimikatz` `minidump` to get passwords
+## Use `procdump` to obtain the `lsass` process memory. 
+
+**Use `mimikatz` `minidump` to get passwords**
 
 ```
 C:\> procdump -accepteula -ma lsass.exe mini.dmp
@@ -428,7 +433,9 @@ C:\> query process *
 netsh int ip reset c:\tcpresetlog.txt
 ```
 
-## List logged on users. Very useful during a pentest to look for domain admins
+## List logged on users. 
+
+**Very useful during a pentest to look for domain admins**
 
 ```
 C:\> net session | find "\\"
@@ -547,6 +554,7 @@ C:\> netsh http sh ca
 C:\> curl -v -H "Range: bytes=234234-28768768" "http://host/a.png" -o a.png
 ```
 **HTTP 416 = Vulnerable**
+
 **HTTP 20X = Not vulnerable**
 
 ## Get a list of all open Named pipes via Powershell
@@ -605,7 +613,7 @@ C:\> forfiles /s /c "cmd /c if @fsize gtr 100000 echo @path @fsize bytes"
 ```
 **Run from the dir you want**
 
-## Print RDP connects
+## Print RDP connections
 
 ```
 for /f "delims=" %i in ('reg query "HKCU\Software\Microsoft\Terminal Server Client\Servers"') do reg query "%i"
@@ -630,7 +638,7 @@ PS C:\> gwmi -n root -cl __Namespace | Select name
 PS C:\> gwmi -n root\cimv2 -li
 ```
 
-## Convert b/w VDI, VMDK, VHD, RAW disk images using VirtualBox
+## Convert Between VDI, VMDK, VHD, RAW disk images using VirtualBox
 
 ```
 C:\> vboxmanage clonehd myvdi.vdi myvmdk.vmdk --format VMDK
