@@ -652,7 +652,7 @@ for /F %i in ('VBoxManage list runningvms') do VBoxManage guestproperty enumerat
 
 ## Windows Privilege Escalation
 
-![Windows Privilege Escalation](images/windows-privilege-esclation.png)(http://www.slideshare.net/riyazwalikar/windows-privilege-escalation)
+[![Windows Privilege Escalation](images/windows-privilege-esclation.png)](http://www.slideshare.net/riyazwalikar/windows-privilege-escalation)
 
 
 ---
