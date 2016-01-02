@@ -663,5 +663,7 @@ for /F %i in ('VBoxManage list runningvms') do VBoxManage guestproperty enumerat
 
 
 ---
+## Contribution
 
+Please read the [contribution guidelines](CONTRIBUTING.md) if you want to contribute.
 
