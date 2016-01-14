@@ -88,6 +88,8 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 - [Change file extensions recurseively](#change-file-extensions-recurseively)
 - [List IPs of running VirtualBox machines](#list-ips-of-running-virtualbox-machines)
 - [Windows Privilege Escalation](#windows-privilege-escalation)
+- [Enumerate packages with their oem inf filenames](#enumerate-packages-with-their-oem-inf-filenames)
+- [Install a driver package using inf file](install-a-driver-package-using-inf-file)
 
 ### Get entires from IPv4 neighbor cache
 
@@ -661,6 +663,17 @@ for /F %i in ('VBoxManage list runningvms') do VBoxManage guestproperty enumerat
 
 [![Windows Privilege Escalation](images/windows-privilege-esclation.png)](http://www.slideshare.net/riyazwalikar/windows-privilege-escalation)
 
+### Enumerate packages with their oem inf filenames
+
+```
+C:\> pnputil -e
+```
+
+### Install a driver package using inf file
+
+```
+C:\> pnputil -i -a path_to_inf
+```
 
 ---
 ## Contribution
