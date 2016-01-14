@@ -89,7 +89,7 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 - [List IPs of running VirtualBox machines](#list-ips-of-running-virtualbox-machines)
 - [Windows Privilege Escalation](#windows-privilege-escalation)
 - [Enumerate packages with their oem inf filenames](#enumerate-packages-with-their-oem-inf-filenames)
-- [Install a driver package using inf file](install-a-driver-package-using-inf-file)
+- [Install a driver package using inf file](#install-a-driver-package-using-inf-file)
 
 ### Get entires from IPv4 neighbor cache
 
