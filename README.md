@@ -90,6 +90,7 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 - [Windows Privilege Escalation](#windows-privilege-escalation)
 - [Enumerate packages with their oem inf filenames](#enumerate-packages-with-their-oem-inf-filenames)
 - [Install a driver package using inf file](#install-a-driver-package-using-inf-file)
+- [Malware Hunting with Mark Russinovich and the Sysinternals](#malware-hunting-with-mark-russinovich-and-the-sysinternals)
 
 ---
 
@@ -676,6 +677,11 @@ C:\> pnputil -e
 ```
 C:\> pnputil -i -a path_to_inf
 ```
+
+### Malware Hunting with Mark Russinovich and the Sysinternals
+
+[![Malware Hunting with Mark Russinovich and the Sysinternals Tools](http://img.youtube.com/vi/80vfTA9LrBM/0.jpg)](https://www.youtube.com/watch?v=80vfTA9LrBM)
+
 
 ---
 ## Contribution
