@@ -92,6 +92,8 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 - [Install a driver package using inf file](#install-a-driver-package-using-inf-file)
 - [Malware Hunting with Mark Russinovich and the Sysinternals](#malware-hunting-with-mark-russinovich-and-the-sysinternals)
 - [Windows Nano Server APIs](#windows-nano-server-apis)
+- [Windows wifi hotspot using cmd](#windows-wifi-hotspot-using-cmd)
+- [Disable UAC via cmdline](#disable-uac-via-cmdline)
 
 ---
 
@@ -687,6 +689,18 @@ C:\> pnputil -i -a path_to_inf
 ### Windows Nano Server APIs
 
 [https://msdn.microsoft.com/en-us/library/mt588480(v=vs.85).aspx](https://msdn.microsoft.com/en-us/library/mt588480(v=vs.85).aspx)
+
+### Windows wifi hotspot using cmd
+
+Starting a wifi hotspot using Windows cmd with ssid name `hotspotname` and key `password`
+
+![Windows wifi hotspot using cmd](images/wifihotspot.jpg)
+
+### Disable UAC via cmdline
+
+```
+C:\> reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system /v EnableLUA /t REG_DWORD /d 0 /f
+```
 
 ---
 ## Contribution
