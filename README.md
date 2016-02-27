@@ -94,6 +94,7 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 - [Windows Nano Server APIs](#windows-nano-server-apis)
 - [Windows wifi hotspot using cmd](#windows-wifi-hotspot-using-cmd)
 - [Disable UAC via cmdline](#disable-uac-via-cmdline)
+- [Turn off Windows firewall for all profiles](#turn-off-windows-firewall-for-all-profiles)
 
 ---
 
@@ -700,6 +701,13 @@ Starting a wifi hotspot using Windows cmd with ssid name `hotspotname` and key `
 
 ```
 C:\> reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system /v EnableLUA /t REG_DWORD /d 0 /f
+```
+###Turn off Windows firewall for all profiles
+
+**Useful if you have a bind shell**
+
+```
+C:\> netsh advfirewall set allprofiles state off
 ```
 
 ---
