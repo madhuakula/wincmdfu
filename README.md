@@ -95,6 +95,7 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 - [Windows wifi hotspot using cmd](#windows-wifi-hotspot-using-cmd)
 - [Disable UAC via cmdline](#disable-uac-via-cmdline)
 - [Turn off Windows firewall for all profiles](#turn-off-windows-firewall-for-all-profiles)
+- [List Missing Updates](#list-missing-updates)
 
 ---
 
@@ -708,6 +709,11 @@ C:\> reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system 
 
 ```
 C:\> netsh advfirewall set allprofiles state off
+```
+###List Missing Updates
+
+```
+PS C:\> (New-Object -c Microsoft.Update.Session).CreateUpdateSearcher().Search("IsInstalled=0").Updates|Select Title
 ```
 
 ---
