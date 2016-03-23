@@ -96,6 +96,7 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 - [Disable UAC via cmdline](#disable-uac-via-cmdline)
 - [Turn off Windows firewall for all profiles](#turn-off-windows-firewall-for-all-profiles)
 - [List Missing Updates](#list-missing-updates)
+- [Export SAM and SYSTEM. Dump password hashes offline](#export-sam-and-system-dump-password-hashes-offline)
 
 ---
 
@@ -714,6 +715,13 @@ C:\> netsh advfirewall set allprofiles state off
 
 ```
 PS C:\> (New-Object -c Microsoft.Update.Session).CreateUpdateSearcher().Search("IsInstalled=0").Updates|Select Title
+```
+
+###Export SAM and SYSTEM Dump password hashes offline
+
+```
+C:\>reg save HKLM\SAM SAM
+C:\>reg save HKLM\SYSTEM SYSTEM
 ```
 
 ---
