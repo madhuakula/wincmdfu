@@ -97,6 +97,8 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 - [Turn off Windows firewall for all profiles](#turn-off-windows-firewall-for-all-profiles)
 - [List Missing Updates](#list-missing-updates)
 - [Export SAM and SYSTEM. Dump password hashes offline](#export-sam-and-system-dump-password-hashes-offline)
+- [Convert Binary to base64 string to transfer across restricted RDP](#convert-binary-to-base64-string-to-transfer-across-restricted-rdp)
+- [Convert Base64 string to Binary](#convert-base64-string-to-binary)
 
 ---
 
@@ -722,6 +724,18 @@ PS C:\> (New-Object -c Microsoft.Update.Session).CreateUpdateSearcher().Search("
 ```
 C:\>reg save HKLM\SAM SAM
 C:\>reg save HKLM\SYSTEM SYSTEM
+```
+
+###Convert Binary to base64 string to transfer across restricted RDP
+
+```
+PS C:\> [Convert]::ToBase64String((gc -Pa "a.exe" -En By))
+```
+
+###Convert Base64 string to Binary
+
+```
+PS C:\> sc -Path "a.exe" -Val ([Convert]::FromBase64String((gc -Pa "b64.txt" ))) -En By
 ```
 
 ---
