@@ -99,6 +99,8 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 - [Export SAM and SYSTEM. Dump password hashes offline](#export-sam-and-system-dump-password-hashes-offline)
 - [Convert Binary to base64 string to transfer across restricted RDP](#convert-binary-to-base64-string-to-transfer-across-restricted-rdp)
 - [Convert Base64 string to Binary](#convert-base64-string-to-binary)
+- [List services running as SYSTEM and possibly weak file permissions](list-services-running-as-system-and-possibly-weak-file-permissions)
+
 
 ---
 
@@ -736,6 +738,11 @@ PS C:\> [Convert]::ToBase64String((gc -Pa "a.exe" -En By))
 
 ```
 PS C:\> sc -Path "a.exe" -Val ([Convert]::FromBase64String((gc -Pa "b64.txt" ))) -En By
+```
+###List services running as SYSTEM and possibly weak file permissions
+
+```
+wmic service where StartName="LocalSystem"|findstr /IV ":\WIN :\PROG"
 ```
 
 ---
