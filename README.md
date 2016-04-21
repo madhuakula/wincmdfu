@@ -100,13 +100,12 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 - [Convert Binary to base64 string to transfer across restricted RDP](#convert-binary-to-base64-string-to-transfer-across-restricted-rdp)
 - [Convert Base64 string to Binary](#convert-base64-string-to-binary)
 - [List services running as SYSTEM and possibly weak file permissions](#list-services-running-as-system-and-possibly-weak-file-permissions)
-- [Check Bitlocker status on a remote box](#check-bitlocker-status-on-a-remote box)
+- [Check Bitlocker status on a remote box](#check-bitlocker-status-on-a-remote-box)
 
 
 ---
 
 ### Get entires from IPv4 neighbor cache
-
 
 ```
 C:\>netsh interface ipv4 show neighbors
@@ -120,14 +119,12 @@ C:\>netsh wlan show networks mode=b
 
 ### Quick list IP addresses only
 
-
 Save the following in `ip.bat` in `%PATH%`
 
 ```
 C:\>ipconfig | find /I "pv"
 ```
 Call `ip` from CLI
-
 
 ### List ALL services AND their binaries
 
