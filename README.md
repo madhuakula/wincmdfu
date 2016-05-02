@@ -101,6 +101,7 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 - [Convert Base64 string to Binary](#convert-base64-string-to-binary)
 - [List services running as SYSTEM and possibly weak file permissions](#list-services-running-as-system-and-possibly-weak-file-permissions)
 - [Check Bitlocker status on a remote box](#check-bitlocker-status-on-a-remote-box)
+- [Export failed logon attempts](#export-failed-logon-attempts)
 
 
 ---
@@ -748,6 +749,12 @@ wmic service where StartName="LocalSystem"|findstr /IV ":\WIN :\PROG"
 manage-bde -status -cn <box>
 ```
 Use `wmic /node:@ips.txt` & `process` alias for multiple.
+
+###Export failed logon attempts
+
+```
+PS C:\> Get-EventLog -Log Security | ?{$_.EntryType -eq 'FailureAudit'} | epcsv log.csv
+```
 
 
 ---
