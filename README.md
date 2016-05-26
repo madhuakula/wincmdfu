@@ -102,7 +102,8 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 - [List services running as SYSTEM and possibly weak file permissions](#list-services-running-as-system-and-possibly-weak-file-permissions)
 - [Check Bitlocker status on a remote box](#check-bitlocker-status-on-a-remote-box)
 - [Export failed logon attempts](#export-failed-logon-attempts)
-
+- [Alternate Data Streams and PS](#alternate-data-streams-and-ps)
+- [Run the Windows Assessment tool for cpu and ram and disk](#run-the-windows-assessment-tool-for-cpu-and-ram-and-disk)
 
 ---
 
@@ -754,6 +755,37 @@ Use `wmic /node:@ips.txt` & `process` alias for multiple.
 
 ```
 PS C:\> Get-EventLog -Log Security | ?{$_.EntryType -eq 'FailureAudit'} | epcsv log.csv
+```
+
+###Alternate Data Streams and PS
+
+- List all ADS for all files in current dir
+```
+PS C:\> gi * -s *
+```
+
+- Read ADS
+```
+PS C:\> gc <file> -s <ADSName>
+```
+
+- Create ADS using text input
+```
+PS C:\> sc <file> -s <ADSName>
+```
+
+- Delete ADS
+```
+PS C:\> ri <file> -s <ADSName>
+```
+
+###Run the Windows Assessment tool for cpu and ram and disk
+
+```
+C:\> winsat cpuformal -v
+C:\> winsat memformal -v
+C:\> winsat diskformal -v
+
 ```
 
 
