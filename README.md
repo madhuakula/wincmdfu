@@ -104,6 +104,7 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 - [Export failed logon attempts](#export-failed-logon-attempts)
 - [Alternate Data Streams and PS](#alternate-data-streams-and-ps)
 - [Run the Windows Assessment tool for cpu and ram and disk](#run-the-windows-assessment-tool-for-cpu-and-ram-and-disk)
+- [Port forward (proxy) traffic to remote host and port](#port-forward-proxy-traffic-to-remote-host-port)
 
 ---
 
@@ -786,6 +787,12 @@ C:\> winsat cpuformal -v
 C:\> winsat memformal -v
 C:\> winsat diskformal -v
 
+```
+
+###Port forward (proxy) traffic to remote host and port
+
+```
+C:\> netsh int p add v4tov4 <LPORT> <RHOST> [RPORT] [LHOST]
 ```
 
 
