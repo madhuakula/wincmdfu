@@ -105,7 +105,7 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 - [Alternate Data Streams and PS](#alternate-data-streams-and-ps)
 - [Run the Windows Assessment tool for cpu and ram and disk](#run-the-windows-assessment-tool-for-cpu-and-ram-and-disk)
 - [Port forward (proxy) traffic to remote host and port](#port-forward-proxy-traffic-to-remote-host-and-port)
-
+- [Enable/Disable NetBIOS over TCP/IP](#enable-disable-netbios-over-tcp-ip)
 ---
 
 ### Get entires from IPv4 neighbor cache
@@ -794,6 +794,19 @@ C:\> winsat diskformal -v
 C:\> netsh int p add v4tov4 <LPORT> <RHOST> [RPORT] [LHOST]
 ```
 
+###Enable/Disable NetBIOS over TCP/IP
+
+```
+Step 1. Get Index of Network Adapter:
+C:\> wmic nicconfig get caption,index
+
+Step 2. Use the index 
+C:\> wmic nicconfig where index=1 call SetTcpipNetbios 1
+
+0-Def
+1-En
+2-Dis
+```
 
 ---
 ## Contribution
