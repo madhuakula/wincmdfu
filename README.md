@@ -105,7 +105,8 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 - [Alternate Data Streams and PS](#alternate-data-streams-and-ps)
 - [Run the Windows Assessment tool for cpu and ram and disk](#run-the-windows-assessment-tool-for-cpu-and-ram-and-disk)
 - [Port forward (proxy) traffic to remote host and port](#port-forward-proxy-traffic-to-remote-host-and-port)
-- [Enable/Disable NetBIOS over TCP/IP](#enable-disable-netbios-over-tcp-ip)
+- [Enable/Disable NetBIOS over TCP/IP](#enabledisable-netbios-over-tcpip)
+
 ---
 
 ### Get entires from IPv4 neighbor cache
