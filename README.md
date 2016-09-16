@@ -106,6 +106,8 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 - [Run the Windows Assessment tool for cpu and ram and disk](#run-the-windows-assessment-tool-for-cpu-and-ram-and-disk)
 - [Port forward (proxy) traffic to remote host and port](#port-forward-proxy-traffic-to-remote-host-and-port)
 - [Enable/Disable NetBIOS over TCP/IP](#enabledisable-netbios-over-tcpip)
+- [Compact multiple VDI files across folders](#compact-multiple-vdi-files-across-folders)
+- [Full scan using WinDefender](#full-scan-using-windefender)
 
 ---
 
@@ -807,6 +809,20 @@ C:\> wmic nicconfig where index=1 call SetTcpipNetbios 1
 0-Def
 1-En
 2-Dis
+```
+
+###Compact multiple VDI files across folders
+
+```
+C:\> for /F %i in ('dir /b /s *.vdi ^| find ".vdi"') do vboxmanage modifyhd --compact %i
+```
+
+###Full scan using WinDefender
+
+```
+C:\>"%ProgramFiles%\Windows Defender\MpCmdRun.exe" -scan -scantype 2
+
+Use #wmic /node:@ips process for multiple.
 ```
 
 ---
