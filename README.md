@@ -108,6 +108,7 @@ Windows one line commands that make life easier, shortcuts and command line fu.
 - [Enable/Disable NetBIOS over TCP/IP](#enabledisable-netbios-over-tcpip)
 - [Compact multiple VDI files across folders](#compact-multiple-vdi-files-across-folders)
 - [Full scan using WinDefender](#full-scan-using-windefender)
+- [Generate 32 char random password](#generate-32-char-random-password)
 
 ---
 
@@ -823,6 +824,13 @@ C:\> for /F %i in ('dir /b /s *.vdi ^| find ".vdi"') do vboxmanage modifyhd --co
 C:\>"%ProgramFiles%\Windows Defender\MpCmdRun.exe" -scan -scantype 2
 
 Use #wmic /node:@ips process for multiple.
+```
+
+###Generate 32 char random password
+
+Save as genpass.ps1
+```
+PS C:\> ([char[]](38..126)|sort{Get-Random})[0..32] -join ''
 ```
 
 ---
