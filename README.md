@@ -142,7 +142,7 @@ for /F "tokens=2* delims= " %i in ('sc query ^| find /I "ce_name"') do @sc qc %i
 ### Export SAM from the Windows Registry to a file
 
 ```
-C:\>reg save HKLM\SAM C:\Windows\Temp\SAM
+C:\>reg save HKLM\SAM "%temp%\SAM.reg"
 ```
 
 ### Enable remote desktop using reg
@@ -263,7 +263,7 @@ C:\> fsutil.exe fsinfo drives
 ### Troubleshoot n/w packet drops with router statistics using pathping
 
 ```
-C:\> pathping -n http://www.google.com
+C:\> pathping -n www.google.com
 ```
 
 ### List unsigned dlls for a specific process. 
@@ -713,56 +713,56 @@ Starting a wifi hotspot using Windows cmd with ssid name `hotspotname` and key `
 ```
 C:\> reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\policies\system /v EnableLUA /t REG_DWORD /d 0 /f
 ```
-###Turn off Windows firewall for all profiles
+### Turn off Windows firewall for all profiles
 
 **Useful if you have a bind shell**
 
 ```
 C:\> netsh advfirewall set allprofiles state off
 ```
-###List Missing Updates
+### List Missing Updates
 
 ```
 PS C:\> (New-Object -c Microsoft.Update.Session).CreateUpdateSearcher().Search("IsInstalled=0").Updates|Select Title
 ```
 
-###Export SAM and SYSTEM Dump password hashes offline
+### Export SAM and SYSTEM Dump password hashes offline
 
 ```
 C:\>reg save HKLM\SAM SAM
 C:\>reg save HKLM\SYSTEM SYSTEM
 ```
 
-###Convert Binary to base64 string to transfer across restricted RDP
+### Convert Binary to base64 string to transfer across restricted RDP
 
 ```
 PS C:\> [Convert]::ToBase64String((gc -Pa "a.exe" -En By))
 ```
 
-###Convert Base64 string to Binary
+### Convert Base64 string to Binary
 
 ```
 PS C:\> sc -Path "a.exe" -Val ([Convert]::FromBase64String((gc -Pa "b64.txt" ))) -En By
 ```
-###List services running as SYSTEM and possibly weak file permissions
+### List services running as SYSTEM and possibly weak file permissions
 
 ```
 wmic service where StartName="LocalSystem"|findstr /IV ":\WIN :\PROG"
 ```
-###Check Bitlocker status on a remote box
+### Check Bitlocker status on a remote box
 
 ```
 manage-bde -status -cn <box>
 ```
 Use `wmic /node:@ips.txt` & `process` alias for multiple.
 
-###Export failed logon attempts
+### Export failed logon attempts
 
 ```
 PS C:\> Get-EventLog -Log Security | ?{$_.EntryType -eq 'FailureAudit'} | epcsv log.csv
 ```
 
-###Alternate Data Streams and PS
+### Alternate Data Streams and PS
 
 - List all ADS for all files in current dir
 ```
@@ -784,7 +784,7 @@ PS C:\> sc <file> -s <ADSName>
 PS C:\> ri <file> -s <ADSName>
 ```
 
-###Run the Windows Assessment tool for cpu and ram and disk
+### Run the Windows Assessment tool for cpu and ram and disk
 
 ```
 C:\> winsat cpuformal -v
@@ -792,13 +792,13 @@ C:\> winsat memformal -v
 C:\> winsat diskformal -v
 ```
 
-###Port forward (proxy) traffic to remote host and port
+### Port forward (proxy) traffic to remote host and port
 
 ```
 C:\> netsh int p add v4tov4 <LPORT> <RHOST> [RPORT] [LHOST]
 ```
 
-###Enable/Disable NetBIOS over TCP/IP
+### Enable/Disable NetBIOS over TCP/IP
 
 ```
 Step 1. Get Index of Network Adapter:
@@ -812,13 +812,13 @@ C:\> wmic nicconfig where index=1 call SetTcpipNetbios 1
 2-Dis
 ```
 
-###Compact multiple VDI files across folders
+### Compact multiple VDI files across folders
 
 ```
 C:\> for /F %i in ('dir /b /s *.vdi ^| find ".vdi"') do vboxmanage modifyhd --compact %i
 ```
 
-###Full scan using WinDefender
+### Full scan using WinDefender
 
 ```
 C:\>"%ProgramFiles%\Windows Defender\MpCmdRun.exe" -scan -scantype 2
@@ -826,7 +826,7 @@ C:\>"%ProgramFiles%\Windows Defender\MpCmdRun.exe" -scan -scantype 2
 Use #wmic /node:@ips process for multiple.
 ```
 
-###Generate 32 char random password
+### Generate 32 char random password
 
 Save as genpass.ps1
 ```
